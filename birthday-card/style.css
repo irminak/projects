@@ -5,11 +5,13 @@
 }
 
 body {
-    background-color: darksalmon;
+    background-image: url(bck.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .card {
     height: 400px;
-    width: 640px;
+    width: 570px;
     margin: auto;
     position: absolute;
     top: 0;
@@ -34,7 +36,7 @@ body {
     left: 50.1%;
 }
 .inside {
-    background: linear-gradient(to right, #e0e0e0, #ffffff 30%);
+    background: linear-gradient(to right, #98928c, #e1d8d1 30%);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -65,21 +67,26 @@ body {
 }
 
 .front {
-    background-image: url(cover.png);
+    background-image: url(dogo.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .back {
     transform: rotateY(180deg);
-    background: linear-gradient(to left, #e0e0e0, #ffffff 30%);
+    background: linear-gradient(to left, #98928c, #e1d8d1 30%);
 }
 
-.inside p {
+.message {
     padding: 0 40px;
     text-align: justify;
+    font-family: 'Allura', sans-serif;
+    font-size: 20px;
 }
 
 .signature {
+    padding: 0 40px;
     align-self: flex-end;
+    font-size: 12px;
+    font-family: 'Pacifico', arial;
 }
