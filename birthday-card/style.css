@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(bck.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.card {
+    height: 400px;
+    width: 570px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+    transition: 0.5s;
+}
+.card:hover {
+    transform: rotate(-5deg);
+}
+.card:hover .outside {
+    transform: rotateY(-150deg);
+}
+.outside,
+.inside {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 50.1%;
+}
+.inside {
+    background: linear-gradient(to right, #98928c, #e1d8d1 30%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    transform-origin: right;
+    left: 50%;
+}
+
+.outside {
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: rotateX(0deg);
+}
+
+.front {
+    background-image: url(dogo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #98928c, #e1d8d1 30%);
+}
+
+.message {
+    padding: 0 40px;
+    text-align: justify;
+    font-family: 'Allura', sans-serif;
+    font-size: 20px;
+}
+
+.signature {
+    padding: 0 40px;
+    align-self: flex-end;
+    font-size: 12px;
+    font-family: 'Pacifico', arial;
+}
