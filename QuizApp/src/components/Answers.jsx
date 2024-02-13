@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 function Answers({ answers, selectedAnswer, answerState, onSelect }) {
     const shuffledAnswers = useRef();
+
     if (!shuffledAnswers.current) {
         shuffledAnswers.current = [...answers];
         shuffledAnswers.current.sort(() => Math.random() - 0.5);
@@ -30,6 +31,7 @@ function Answers({ answers, selectedAnswer, answerState, onSelect }) {
                         <button
                             onClick={() => onSelect(answer)}
                             className={cssClass}
+                            disabled={answerState !== ''}
                         >
                             {answer}
                         </button>
