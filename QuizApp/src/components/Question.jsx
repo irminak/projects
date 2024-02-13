@@ -4,11 +4,14 @@ import QuestionTimer from './QuestionTimer';
 import Answers from './Answers';
 import QUESTIONS from '../questions';
 
+
 function Question({ questionIndex, onSelectAnswer, onSkipAnswer }) {
+
     const [answer, setAnswer] = useState({
         selectedAnswer: '',
         isCorrect: null,
     });
+
 
     let timer = 10000;
 
@@ -19,6 +22,7 @@ function Question({ questionIndex, onSelectAnswer, onSkipAnswer }) {
         timer = 2000;
     }
     function handleSelectAnswer(answer) {
+
         setAnswer({
             selectedAnswer: answer,
             isCorrect: null,
@@ -27,6 +31,7 @@ function Question({ questionIndex, onSelectAnswer, onSkipAnswer }) {
         setTimeout(() => {
             setAnswer({
                 selectedAnswer: answer,
+
                 isCorrect: QUESTIONS[questionIndex].answers[0] === answer,
             });
 
@@ -54,6 +59,7 @@ function Question({ questionIndex, onSelectAnswer, onSkipAnswer }) {
             <Answers
                 answers={QUESTIONS[questionIndex].answers}
                 selectedAnswer={answer.selectedAnswer}
+
                 answerState={answerState}
                 onSelect={handleSelectAnswer}
             />

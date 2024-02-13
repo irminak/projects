@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 
 import QUESTIONS from '../questions.js';
+
 import Question from './Question.jsx';
 import Summary from './Summary.jsx';
 
@@ -18,6 +19,7 @@ function Quiz() {
         });
     },
     []);
+
     const handleSkipAnswer = useCallback(
         () => handleSelectAnswer(null),
         [handleSelectAnswer]
@@ -25,13 +27,16 @@ function Quiz() {
 
     if (quizIsComplete) {
         return <Summary userAnswers={userAnswers} />;
+
     }
 
     return (
         <div id='quiz'>
             <Question
                 key={activeQuestionIndex}
+
                 questionIndex={activeQuestionIndex}
+
                 onSelectAnswer={handleSelectAnswer}
                 onSkipAnswer={handleSkipAnswer}
             />
