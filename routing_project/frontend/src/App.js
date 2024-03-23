@@ -6,6 +6,7 @@ import EventDetailPage from './pages/EventDetail.js';
 import NewEventPage from './pages/NewEvent.js';
 import RootPage from './pages/Root.js';
 import EventsRootPage from './pages/EventsRoot.js';
+import ErrorPage from './pages/Error.js';
 // 1. Add five new (dummy) page components (content can be simple <h1> elements)
 //    - HomePage
 //    - EventsPage
@@ -31,6 +32,7 @@ function App() {
         {
             path: '/',
             element: <RootPage />,
+            errorElement: <ErrorPage />,
             children: [
                 { index: true, element: <HomePage /> },
                 {
