@@ -4,8 +4,9 @@ import EventsPage, { loader as eventsLoader } from './pages/Events.js';
 import EditEventPage from './pages/EditEvent.js';
 import EventDetailPage, {
     loader as eventDetailsLoader,
+    action as deleteEventAction,
 } from './pages/EventDetail.js';
-import NewEventPage from './pages/NewEvent.js';
+import NewEventPage, { action as newEventAction } from './pages/NewEvent.js';
 import RootPage from './pages/Root.js';
 import EventsRootPage from './pages/EventsRoot.js';
 import ErrorPage from './pages/Error.js';
@@ -54,6 +55,7 @@ function App() {
                                 {
                                     index: true,
                                     element: <EventDetailPage />,
+                                    action: deleteEventAction,
                                 },
 
                                 {
@@ -62,7 +64,11 @@ function App() {
                                 },
                             ],
                         },
-                        { path: 'new', element: <NewEventPage /> },
+                        {
+                            path: 'new',
+                            element: <NewEventPage />,
+                            action: newEventAction,
+                        },
                     ],
                 },
             ],
