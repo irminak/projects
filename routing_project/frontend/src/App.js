@@ -11,6 +11,8 @@ import RootPage from './pages/Root.js';
 import EventsRootPage from './pages/EventsRoot.js';
 import ErrorPage from './pages/Error.js';
 import { action as manipulateEventAction } from './components/EventForm.js';
+import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
+
 // 1. Add five new (dummy) page components (content can be simple <h1> elements)
 //    - HomePage
 //    - EventsPage
@@ -72,6 +74,11 @@ function App() {
                             action: manipulateEventAction,
                         },
                     ],
+                },
+                {
+                    path: 'newsletter',
+                    element: <NewsletterPage />,
+                    action: newsletterAction,
                 },
             ],
         },
