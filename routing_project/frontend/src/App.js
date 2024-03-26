@@ -6,10 +6,11 @@ import EventDetailPage, {
     loader as eventDetailsLoader,
     action as deleteEventAction,
 } from './pages/EventDetail.js';
-import NewEventPage, { action as newEventAction } from './pages/NewEvent.js';
+import NewEventPage from './pages/NewEvent.js';
 import RootPage from './pages/Root.js';
 import EventsRootPage from './pages/EventsRoot.js';
 import ErrorPage from './pages/Error.js';
+import { action as manipulateEventAction } from './components/EventForm.js';
 // 1. Add five new (dummy) page components (content can be simple <h1> elements)
 //    - HomePage
 //    - EventsPage
@@ -61,13 +62,14 @@ function App() {
                                 {
                                     path: 'edit',
                                     element: <EditEventPage />,
+                                    action: manipulateEventAction,
                                 },
                             ],
                         },
                         {
                             path: 'new',
                             element: <NewEventPage />,
-                            action: newEventAction,
+                            action: manipulateEventAction,
                         },
                     ],
                 },
