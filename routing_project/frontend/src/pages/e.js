@@ -10,14 +10,12 @@ function EventsPage() {
                 {(loadEvents) => <EventsList events={loadEvents} />}
             </Await>
         </Suspense>
-
     );
 }
 
 export default EventsPage;
 
 async function loadEvents() {
-
     const response = await fetch('http://localhost:8080/events');
 
     if (!response.ok) {
@@ -38,4 +36,3 @@ export function loader() {
         events: loadEvents(),
     });
 }
-
